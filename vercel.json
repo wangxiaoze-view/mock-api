@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/mock-api/(.*)",
       "dest": "src/main.ts",
       "methods": [
         "GET",

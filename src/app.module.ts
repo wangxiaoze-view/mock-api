@@ -13,7 +13,7 @@ import { SimAdminModule } from './sim-admin/sim-admin.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '.env',
+      envFilePath: '.env.production',
     }),
 
     // 速率限制
