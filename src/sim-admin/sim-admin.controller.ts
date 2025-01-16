@@ -8,7 +8,8 @@ import { sim_admin_user } from './config/sim-admin-config';
 import { ApiException } from 'src/common/exception /api.exception';
 import { HttpStatusCode } from 'src/common/enum /http.enum';
 
-// sim-admin 系统，不做细致区分，用到的mock接口并不多
+// sim-admin 后端管理系统，不做细致区分，用到的mock接口并不多
+
 @Controller('sim-admin')
 export class SimAdminController {
   constructor(private readonly simAdminService: SimAdminService) {}
