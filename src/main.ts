@@ -13,7 +13,7 @@ async function bootstrap() {
       'https://www.wangzevw.com/sim-admin',
       '*',
     ], // 指定允许的域名
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   });
