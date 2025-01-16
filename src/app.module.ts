@@ -1,9 +1,4 @@
-import {
-  MiddlewareConsumer,
-  Module,
-  NestModule,
-  ValidationPipe,
-} from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
@@ -13,7 +8,6 @@ import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { AllExceptionFilter } from './common/filter/all-exception.filter';
 import { InterceptorInterceptor } from './common/interceptor/interceptor.interceptor';
 import { SimAdminModule } from './sim-admin/sim-admin.module';
-import { CorsMiddleware } from './common/middleware/cors.middleware';
 
 @Module({
   imports: [
@@ -62,8 +56,4 @@ import { CorsMiddleware } from './common/middleware/cors.middleware';
     },
   ],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(CorsMiddleware).forRoutes('*');
-  }
-}
+export class AppModule {}
