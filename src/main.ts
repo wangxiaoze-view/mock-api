@@ -20,9 +20,6 @@ async function bootstrap() {
       App running at:
         - Local:   ${kleur.green(`http://localhost:${process.env.PORT}${process.env.API_GLOBAL_PREFIX}/`)}
         - Network: ${kleur.green(`http://${localIpAddresses[0]}:${process.env.PORT}${process.env.API_GLOBAL_PREFIX}/`)}
-      Docs running at:
-        - Local:   ${kleur.green(`http://localhost:${process.env.PORT}${process.env.SWAGGER_PATH}/`)}
-        - Network: ${kleur.green(`http://${localIpAddresses[0]}:${process.env.PORT}${process.env.SWAGGER_PATH}/`)}
     `;
     Logger.log(runningInfo);
   });
