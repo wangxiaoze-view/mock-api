@@ -1,11 +1,10 @@
 import { Logger } from '@nestjs/common';
-import { Request } from 'express';
 import * as kleur from 'kleur';
 import { AppService } from 'src/app.service';
 
 export class RequestLog {
   constructor() {}
-  static log(request: Request, message = '') {
+  static log(request: any, message = '') {
     const commonService = new AppService();
     const logOptions = {
       url: request.url,

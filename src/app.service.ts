@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import dayjs from 'dayjs';
 import { networkInterfaces } from 'node:os';
 import * as requestIp from 'request-ip';
-import { Request } from 'express';
 
 @Injectable()
 export class AppService {
@@ -42,7 +41,7 @@ export class AppService {
    * @returns
    */
 
-  getIp(_requestIp: Request | string) {
+  getIp(_requestIp: any) {
     const _ip =
       typeof _requestIp === 'object'
         ? requestIp.getClientIp(_requestIp) || _requestIp.ip

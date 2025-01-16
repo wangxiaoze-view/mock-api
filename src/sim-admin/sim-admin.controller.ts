@@ -1,6 +1,5 @@
 import { Body, Controller, Get, Post, Request } from '@nestjs/common';
 import { SimAdminService } from './sim-admin.service';
-import { Request as _Request } from 'express';
 import { mock, Random } from 'mockjs';
 import { sim_admin_notice } from './config/sim-admin-notice';
 import { SimLoginUser } from './dto/sim-admin';
@@ -27,7 +26,7 @@ export class SimAdminController {
 
   // 获取用户信息
   @Get('/getUserInfo')
-  getUserInfo(@Request() req: _Request) {
+  getUserInfo(@Request() req: any) {
     const authorization: string = req.headers.authorization || '';
     const k = 'Bearer ';
     const userName = authorization
@@ -61,7 +60,7 @@ export class SimAdminController {
 
   // 模拟表格数据
   @Get('/getTotalData')
-  getTotalData(@Request() req: _Request) {
+  getTotalData(@Request() req: any) {
     const count = 50;
     const data = mock({
       'list|10': [

@@ -7,7 +7,6 @@ import { AppService } from './app.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
-  // app.setGlobalPrefix(process.env.API_GLOBAL_PREFIX);
   app.use(
     helmet({
       contentSecurityPolicy: false,
