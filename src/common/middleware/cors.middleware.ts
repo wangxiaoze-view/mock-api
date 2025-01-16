@@ -5,7 +5,7 @@ import { NextFunction, Request, Response } from 'express';
 export class CorsMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     const allowedOrigin = process.env.CORS_ORIGIN;
-    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigin || '*');
     res.setHeader(
       'Access-Control-Allow-Methods',
       'GET,HEAD,PUT,PATCH,POST,DELETE',
