@@ -7,6 +7,17 @@ import { AppService } from './app.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
+  app.enableCors({
+    origin: [
+      'http://localhost:8080',
+      'https://www.wangzevw.com/sim-admin',
+      '*',
+    ], // 指定允许的域名
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  });
+
   app.use(
     helmet({
       contentSecurityPolicy: false,
